@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
-public class App {
+public class Ejercicio1DatosAcademicos {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double notas[] = new double [10];
 
-        for (int i = 1; i < notas.length; i++) {
+        for (byte i = 1; i < notas.length; i++) {
             System.out.println("Ingrese la nota del estudiante " + i);
             notas[i] = scanner.nextDouble();
 
@@ -46,8 +46,8 @@ public class App {
         }
         return menor;
     }
-    public static int estudiantesAprobados(double []notas){
-        int aprobados = 0;
+    public static byte estudiantesAprobados(double []notas){
+        byte aprobados = 0;
         for (int i = 0; i < notas.length; i++) {
             if (notas[i] >= 6) {
                 aprobados++;
