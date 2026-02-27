@@ -35,4 +35,31 @@ public class ListaContactos {
             actual = actual.getSiguiente();
         }
     }
+
+    public boolean eliminarContacto(String nombre) {
+        if (cabeza == null) {
+            return false;
+        }
+        if (cabeza.getDato().getNombre().equals(nombre)) {
+            cabeza = cabeza.getSiguiente();
+            return true;
+        }
+
+        Nodo actual = cabeza;
+        while (actual.getSiguiente() != null) {
+            if (actual.getSiguiente().getDato().getNombre().equals(nombre)) {
+                actual.setSiguiente(actual.getSiguiente().getSiguiente());
+                return true;
+            }
+            actual = actual.getSiguiente();
+        }
+        return false;
+    }
+    public void listarContactos() {
+        Nodo actual = cabeza;
+        while (actual != null) {
+            System.out.println(actual.getDato());
+            actual = actual.getSiguiente();
+        }
+    }
 }
